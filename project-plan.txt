@@ -1,1 +1,23 @@
-//
+There will be cards of characters.
+These cards will contain information about characters.
+Information that should be delivered via cards are as follows:
+
+-Name // The name of the character
+-Status // The status of the character('Alive', 'Dead', or 'unknown')
+-Species // The species of the character.
+-Gender // The gender of the character ('Female', 'Male', 'Genderless' or 'unknown').
+-Origin // Name and link to the character's origin location.
+-Location // Name and link to the character's last known location endpoint.
+-Image // Link to the character's image. All images are 300x300px and most are medium shots or potraits
+	// since they are intended to be used as avatars.
+
+There will be filtering options to filter out characters. Filtering variables are as follows:
+-Name // filter by given name.
+-Status // filter by given status (alive, dead, or unknown).
+-species // filter by given species.
+-type: // filter by given type.
+-gender: // filter by the given gender (female, male, genderless or uknown).
+
+Whole project is this short.
+Main goal is to display characters with and without filtering options. Filtering the characters is up to the user.
+There may be option to show how mamy characters at maximum should be displayed.
