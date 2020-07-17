@@ -2,9 +2,39 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Card(props) {
-	const { character } = props;
+	const { character: ch } = props;
 
-	return <div></div>;
+	return (
+		<div>
+			{/* outmost card div */}
+			<div>
+				{/* inner container div contains image and informations */}
+				<div>
+					{/* image container */}
+					<img src={ch.image} />
+				</div>
+				<div>
+					{/* information area */}
+					<div>
+						<div>{/* species */}</div>
+						<div>{/* Name and status */}</div>
+					</div>
+					<div>
+						<div>First seen in:</div>
+						<div>{/* First seen location */}</div>
+					</div>
+					<div>
+						<div>Last known location:</div>
+						<div>{/* Last known location */}</div>
+					</div>
+					<div>
+						<div>Gender:</div>
+						<div>{/* Gender */}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 }
 
 Card.propTypes = {
