@@ -1,4 +1,5 @@
 import React from 'react';
+import Filter from '../components/Filter';
 import CardList from '../components/CardList';
 
 function App(props) {
@@ -12,7 +13,9 @@ function App(props) {
 			</div>
 			<div>
 				{/* section for listing cards and filtering */}
-				<div>{/* section for filtering elements */}</div>
+				<div>
+					<Filter />
+				</div>
 				<div>
 					<CardList />
 				</div>
