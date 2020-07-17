@@ -1,4 +1,5 @@
 import React from 'react';
+import CardList from '../components/CardList';
 
 function App(props) {
 	return (
@@ -12,7 +13,9 @@ function App(props) {
 			<div>
 				{/* section for listing cards and filtering */}
 				<div>{/* section for filtering elements */}</div>
-				<div>{/* section for cards */}</div>
+				<div>
+					<CardList />
+				</div>
 			</div>
 		</div>
 	);
