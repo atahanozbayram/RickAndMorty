@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Filter from '../components/Filter';
 import CardList from '../components/CardList';
 
 function App(props) {
+	const [filteringOptions, setFilteringOptions] = useState({
+		name: '',
+		status: '',
+		species: '',
+		type: '',
+		gender: '',
+	}); // pass down setFilteringOptions to Filter component for changing the filterings states.
+
 	return (
 		<div>
 			{/* Outer div of all */}
@@ -14,7 +22,7 @@ function App(props) {
 			<div>
 				{/* section for listing cards and filtering */}
 				<div>
-					<Filter />
+					<Filter filterHandler={setFilteringOptions} filteringOptions={filteringOptions} />
 				</div>
 				<div>
 					<CardList />
