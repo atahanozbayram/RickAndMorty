@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Card(props) {
-	const { character: ch } = props;
+	const { character: ch, ref } = props;
 
 	return (
-		<div>
+		<div ref={ref}>
 			{/* outmost card div */}
 			<div>
 				{/* inner container div contains image and informations */}
@@ -16,20 +16,26 @@ function Card(props) {
 				<div>
 					{/* information area */}
 					<div>
-						<div>{/* species */}</div>
-						<div>{/* Name and status */}</div>
+						<div>{ch.species}</div>
+						<div>
+							{ch.name} - {ch.status}
+						</div>
 					</div>
 					<div>
 						<div>First seen in:</div>
-						<div>{/* First seen location */}</div>
+						<div>
+							<a href={ch.origin.url}>{ch.origin.name}</a>
+						</div>
 					</div>
 					<div>
 						<div>Last known location:</div>
-						<div>{/* Last known location */}</div>
+						<div>
+							<a href={ch.location.url}>{ch.location.name}</a>
+						</div>
 					</div>
 					<div>
 						<div>Gender:</div>
-						<div>{/* Gender */}</div>
+						<div>{ch.gender}</div>
 					</div>
 				</div>
 			</div>
@@ -54,4 +60,6 @@ Card.propTypes = {
 	}),
 };
 
-export { Card as default };
+const forwardedCard = React.forwardRef(Card);
+
+export { forwardedCard as default };

@@ -33,19 +33,19 @@ function useQueryCharacter(name, status, species, type, gender) {
 
 				// set next page
 				setNextPage(res.data.info.next);
-				setLoading(false);
 			})
 			.catch((error) => {
 				// stop cancellations being interpreted as errors.
 				if (axios.isCancel(error)) return;
 				// if program reaches here that means we have an error
 				setError(true);
+				setLoading(false);
 			});
 
 		// Cancel the request if new request is made while the older one has not recieved the
 		// response yet.
 		return cancel;
-	});
+	}, [name, status, species, type, gender]);
 
 	return { loading, error, characters, nextPage };
 }
