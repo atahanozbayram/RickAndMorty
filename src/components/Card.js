@@ -1,21 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import appStyle from '../style/Card.module.css';
 
 function Card(props, ref) {
 	const { character: ch } = props;
 
 	return (
-		<div ref={ref}>
+		<div ref={ref} className={appStyle.card}>
 			{/* outmost card div */}
-			<div>
+			<div className={appStyle.cardInnerDiv}>
 				{/* inner container div contains image and informations */}
-				<div>
+				<div className={appStyle.imageContainer}>
 					{/* image container */}
 					<img src={ch.image} />
 				</div>
-				<div>
+				<div className={appStyle.informationSection}>
 					{/* information area */}
-					<div>
+					<div className={appStyle.top}>
 						<div>{ch.species}</div>
 						<div>
 							{ch.name} - {ch.status}
@@ -33,7 +34,7 @@ function Card(props, ref) {
 							<a href={ch.location.url}>{ch.location.name}</a>
 						</div>
 					</div>
-					<div>
+					<div className={appStyle.bottom}>
 						<div>Gender:</div>
 						<div>{ch.gender}</div>
 					</div>

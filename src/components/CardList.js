@@ -2,6 +2,7 @@ import React, { useState, useRef, useCallback } from 'react';
 import useQueryCharacter from '../hooks/useQueryCharacter';
 import Card from '../components/Card';
 import PropTypes from 'prop-types';
+import appStyle from '../style/CardList.module.css';
 
 function CardList(props) {
 	const { filteringOptions } = props;
@@ -48,7 +49,7 @@ function CardList(props) {
 	);
 
 	return (
-		<div>
+		<div className={appStyle.cardListGrid}>
 			{characters.map((currentChar, index) => {
 				// if character is the last element in the array
 				if (index === characters.length - 1)

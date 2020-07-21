@@ -1,0 +1,32 @@
+.heroSection {
+	background-image: url('../images/hero.png');
+	height: 0;
+	background-repeat: no-repeat;
+	background-size: contain;
+	padding-top: 56.25%;
+	position: relative;
+}
+
+.topbar {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 80px;
+	width: 100%;
+	background-color: #1d3557;
+	color: #ffffff;
+	font: Regular 20px/27px Segoe UI;
+	display: flex;
+	justify-content: right;
+	align-items: center;
+}
+
+.topbar > ul {
+	position: absolute;
+	padding: 40px;
+	font-size: 20px/27px;
+}
+
+.CardList_section {
+	background-color: #094f6f;
+}
