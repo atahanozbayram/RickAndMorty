@@ -12,9 +12,6 @@ function App(props) {
 		gender: '',
 	}); // pass down setFilteringOptions to Filter component for changing the filterings states.
 
-	const { name, status, species, type, gender } = filteringOptions;
-	const { loading, error, characters, nextPage } = useQueryCharacter(name, status, species, type, gender);
-
 	return (
 		<div>
 			{/* Outer div of all */}
@@ -29,7 +26,7 @@ function App(props) {
 					<Filter filterHandler={setFilteringOptions} filteringOptions={filteringOptions} />
 				</div>
 				<div>
-					<CardList loading={loading} error={error} characters={characters} nextPage={nextPage} />
+					<CardList filteringOptions={filteringOptions} />
 				</div>
 			</div>
 		</div>

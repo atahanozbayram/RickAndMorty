@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Card(props) {
-	const { character: ch, ref } = props;
+function Card(props, ref) {
+	const { character: ch } = props;
 
 	return (
 		<div ref={ref}>
@@ -43,7 +43,9 @@ function Card(props) {
 	);
 }
 
-Card.propTypes = {
+const forwardedCard = React.forwardRef(Card);
+
+forwardedCard.propTypes = {
 	character: PropTypes.shape({
 		id: PropTypes.number.isRequired,
 		name: PropTypes.string.isRequired,
@@ -59,7 +61,5 @@ Card.propTypes = {
 		created: PropTypes.string.isRequired,
 	}),
 };
-
-const forwardedCard = React.forwardRef(Card);
 
 export { forwardedCard as default };

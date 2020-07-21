@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function useQueryCharacter(name, status, species, type, gender) {
+function useQueryCharacter(name, status, species, type, gender, pageNumber, setPageNumber) {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(false);
 	const [characters, setCharacters] = useState([]);
-	const [nextPage, setNextPage] = useState(false);
+	const [hasMore, setHasMore] = useState();
 
 	// reset the character's array everytime some changes happens to filtering options
+	// don't reset the array if the pageNumber changes
 	useEffect(() => {
-		setCharacters([]);
+		setCharacters([]); // empty the array
+		setPageNumber(1);
 	}, [name, status, species, type, gender]);
 
 	useEffect(() => {
@@ -21,7 +23,7 @@ function useQueryCharacter(name, status, species, type, gender) {
 			method: 'GET',
 			baseURL: 'https://rickandmortyapi.com/api/',
 			url: 'character/',
-			params: { name, status, species, type, gender },
+			params: { name, status, species, type, gender, page: pageNumber },
 			cancelToken: new axios.CancelToken((cancelTok) => {
 				cancel = cancelTok;
 			}),
@@ -31,8 +33,9 @@ function useQueryCharacter(name, status, species, type, gender) {
 					return [...oldChars, ...res.data.results];
 				});
 
-				// set next page
-				setNextPage(res.data.info.next);
+				// set has more
+				setHasMore(res.data.info.next);
+				setLoading(false);
 			})
 			.catch((error) => {
 				// stop cancellations being interpreted as errors.
@@ -45,9 +48,9 @@ function useQueryCharacter(name, status, species, type, gender) {
 		// Cancel the request if new request is made while the older one has not recieved the
 		// response yet.
 		return cancel;
-	}, [name, status, species, type, gender]);
+	}, [name, status, species, type, gender, pageNumber]);
 
-	return { loading, error, characters, nextPage };
+	return { loading, error, characters, hasMore };
 }
 
 export { useQueryCharacter as default };
