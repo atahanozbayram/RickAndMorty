@@ -1,0 +1,102 @@
+.Card {
+	display: inline-block;
+	background-color: #457b9d;
+	overflow: auto;
+	border-radius: 25px;
+	border-bottom-left-radius: 0px;
+}
+
+/* Inner section of the Card */
+
+.Card__inner-section {
+	display: grid;
+	grid-template-columns: 208px 1fr;
+	grid-template-rows: 208px;
+	gap: 8px;
+	margin: 16px;
+	max-height: 208px;
+}
+
+/* Image area */
+
+.Card__image-area {
+	max-height: 208px;
+	border-top-left-radius: 25px;
+	overflow: hidden;
+}
+
+.Card__image-area > img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+/* Information Area */
+
+.Card__information-area {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.Card__information-area > div {
+	background-color: #76aace;
+	height: 48px;
+	padding: 5px;
+	white-space: nowrap;
+}
+
+.Card__information-area > div:first-child {
+	height: 40px;
+	border-top-right-radius: 25px;
+	text-align: center;
+}
+
+/* Species text should be 10 pixels and also centered */
+.Card__information-area > div:first-child > div:first-child {
+	font-size: 10px;
+	text-align: center;
+}
+
+.Card__information-area > div:last-child {
+	border-bottom-right-radius: 25px;
+}
+
+/* Headers of the informations have 14px font-size */
+.Card__information-area > div > div:first-child {
+	font-size: 14px;
+}
+
+/* information lines have 16px font-sizse */
+
+.Card__information-area > div > div:last-child {
+	font: 16px;
+}
+
+/* Special colored borders */
+.--status-alive {
+	border-bottom: 5px solid #17af59;
+}
+
+.--status-dead {
+	border-bottom: 5px solid #e63946;
+}
+
+.--status-unknown {
+	border-bottom: 5px solid #ffffff;
+}
+
+.--gender-male {
+	border-top: 5px solid #3346f1;
+}
+
+.--gender-female {
+	border-top: 5px solid #f133c4;
+}
+
+.--gender-genderless {
+	border-top: 5px solid grey;
+}
+
+.--gender-unknown {
+	border-top: 5px solid #ffffff;
+}

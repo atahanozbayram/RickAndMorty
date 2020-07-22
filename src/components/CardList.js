@@ -49,7 +49,7 @@ function CardList(props) {
 	);
 
 	return (
-		<div>
+		<div className={appStyle.CardList}>
 			{characters.map((currentChar, index) => {
 				// if character is the last element in the array
 				if (index === characters.length - 1)

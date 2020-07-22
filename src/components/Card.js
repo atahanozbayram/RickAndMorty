@@ -5,18 +5,20 @@ import appStyle from '../style/Card.module.css';
 function Card(props, ref) {
 	const { character: ch } = props;
 
+	// obtain classes for border colors from character's status and gender
+	const statusClass = appStyle['--status-' + ch.status.toLowerCase()];
+	const genderClass = appStyle['--gender-' + ch.gender.toLowerCase()];
+
+	console.log(statusClass); // TODO: delete this code
+
 	return (
-		<div ref={ref}>
-			{/* outmost card div */}
-			<div>
-				{/* inner container div contains image and informations */}
-				<div>
-					{/* image container */}
+		<div ref={ref} className={appStyle['Card']}>
+			<div className={appStyle['Card__inner-section']}>
+				<div className={appStyle['Card__image-area']}>
 					<img src={ch.image} />
 				</div>
-				<div>
-					{/* information area */}
-					<div>
+				<div className={appStyle['Card__information-area']}>
+					<div className={statusClass}>
 						<div>{ch.species}</div>
 						<div>
 							{ch.name} - {ch.status}
@@ -24,17 +26,13 @@ function Card(props, ref) {
 					</div>
 					<div>
 						<div>First seen in:</div>
-						<div>
-							<a href={ch.origin.url}>{ch.origin.name}</a>
-						</div>
+						<div>{ch.origin.name}</div>
 					</div>
 					<div>
 						<div>Last known location:</div>
-						<div>
-							<a href={ch.location.url}>{ch.location.name}</a>
-						</div>
+						<div>{ch.location.name}</div>
 					</div>
-					<div>
+					<div className={genderClass}>
 						<div>Gender:</div>
 						<div>{ch.gender}</div>
 					</div>
