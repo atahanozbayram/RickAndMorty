@@ -49,7 +49,7 @@ function CardList(props) {
 	);
 
 	return (
-		<div className={appStyle.cardListGrid}>
+		<div>
 			{characters.map((currentChar, index) => {
 				// if character is the last element in the array
 				if (index === characters.length - 1)

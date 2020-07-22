@@ -35,6 +35,8 @@
     ]
   },
   "devDependencies": {
-    "eslint-plugin-react-hooks": "^4.0.8"
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "stylelint": "^13.6.1",
+    "stylelint-order": "^4.1.0"
   }
 }

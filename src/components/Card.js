@@ -6,17 +6,17 @@ function Card(props, ref) {
 	const { character: ch } = props;
 
 	return (
-		<div ref={ref} className={appStyle.card}>
+		<div ref={ref}>
 			{/* outmost card div */}
-			<div className={appStyle.cardInnerDiv}>
+			<div>
 				{/* inner container div contains image and informations */}
-				<div className={appStyle.imageContainer}>
+				<div>
 					{/* image container */}
 					<img src={ch.image} />
 				</div>
-				<div className={appStyle.informationSection}>
+				<div>
 					{/* information area */}
-					<div className={appStyle.top}>
+					<div>
 						<div>{ch.species}</div>
 						<div>
 							{ch.name} - {ch.status}
@@ -34,7 +34,7 @@ function Card(props, ref) {
 							<a href={ch.location.url}>{ch.location.name}</a>
 						</div>
 					</div>
-					<div className={appStyle.bottom}>
+					<div>
 						<div>Gender:</div>
 						<div>{ch.gender}</div>
 					</div>
