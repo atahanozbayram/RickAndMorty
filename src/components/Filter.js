@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
+import appStyle from '../style/Filter.module.css';
 
 function Filter(props) {
 	const { filterHandler, filteringOptions } = props;
@@ -46,20 +47,49 @@ function Filter(props) {
 	const unknownStatusId = _.uniqueId('filter');
 
 	return (
-		<div>
-			<div>
-				{/* input[type="text"] container */}
-				<input type="text" value={filteringOptions.name} name="name" onChange={handleInputChange} />
-				{/* input for character name */}
-				<input type="text" value={filteringOptions.species} name="species" onChange={handleInputChange} />
-				{/* input for species of the character */}
-				<input type="text" value={filteringOptions.type} name="type" onChange={handleInputChange} />
-				{/* input for type */}
+		<div className={appStyle['Filter']}>
+			<div className={appStyle['Filter__input-text-group']}>
+				<div className={appStyle['Filter__form-group']}>
+					<input
+						type="text"
+						value={filteringOptions.name}
+						name="name"
+						onChange={handleInputChange}
+						className={appStyle['Filter__text-input']}
+						placeholder="Name"
+						autoComplete="off"
+					/>
+					<label className={appStyle['Filter__form-label']}>Name</label>
+				</div>
+
+				<div className={appStyle['Filter__form-group']}>
+					<input
+						type="text"
+						value={filteringOptions.species}
+						name="species"
+						onChange={handleInputChange}
+						className={appStyle['Filter__text-input']}
+						placeholder="Species"
+						autoComplete="off"
+					/>
+					<label className={appStyle['Filter__form-label']}>Species</label>
+				</div>
+
+				<div className={appStyle['Filter__form-group']}>
+					<input
+						type="text"
+						value={filteringOptions.type}
+						name="type"
+						onChange={handleInputChange}
+						className={appStyle['Filter__text-input']}
+						placeholder="Type"
+						autoComplete="off"
+					/>
+					<label className={appStyle['Filter__form-label']}>Type</label>
+				</div>
 			</div>
-			<div>
-				{/* radio buttons container */}
-				<div>
-					{/* Gender options container*/}
+			<div className={appStyle['Filter__radio-area']}>
+				<div className={appStyle['Filter__radio-gender']}>
 					<div>
 						<label>Gender:</label>
 					</div>
@@ -110,43 +140,45 @@ function Filter(props) {
 						</div>
 					</div>
 				</div>
-				<div>
+				<div className={appStyle['Filter__radio-status']}>
 					{/* Status options container */}
 					<div>
 						<label>Status:</label>
 					</div>
 					<div>
-						<input
-							type="radio"
-							value="alive"
-							name="status"
-							id={aliveId}
-							onClick={handleRadioClick}
-							checked={filteringOptions.status === 'alive' ? true : false}
-						/>
-						<label htmlFor={aliveId}>Alive</label>
-					</div>
-					<div>
-						<input
-							type="radio"
-							value="dead"
-							name="status"
-							id={deadId}
-							onClick={handleRadioClick}
-							checked={filteringOptions.status === 'dead' ? true : false}
-						/>
-						<label htmlFor={deadId}>Dead</label>
-					</div>
-					<div>
-						<input
-							type="radio"
-							value="unknown"
-							name="status"
-							id={unknownStatusId}
-							onClick={handleRadioClick}
-							checked={filteringOptions.status === 'unknown' ? true : false}
-						/>
-						<label htmlFor={unknownStatusId}>Unknown</label>
+						<div>
+							<input
+								type="radio"
+								value="alive"
+								name="status"
+								id={aliveId}
+								onClick={handleRadioClick}
+								checked={filteringOptions.status === 'alive' ? true : false}
+							/>
+							<label htmlFor={aliveId}>Alive</label>
+						</div>
+						<div>
+							<input
+								type="radio"
+								value="dead"
+								name="status"
+								id={deadId}
+								onClick={handleRadioClick}
+								checked={filteringOptions.status === 'dead' ? true : false}
+							/>
+							<label htmlFor={deadId}>Dead</label>
+						</div>
+						<div>
+							<input
+								type="radio"
+								value="unknown"
+								name="status"
+								id={unknownStatusId}
+								onClick={handleRadioClick}
+								checked={filteringOptions.status === 'unknown' ? true : false}
+							/>
+							<label htmlFor={unknownStatusId}>Unknown</label>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -9,8 +9,6 @@ function Card(props, ref) {
 	const statusClass = appStyle['--status-' + ch.status.toLowerCase()];
 	const genderClass = appStyle['--gender-' + ch.gender.toLowerCase()];
 
-	console.log(statusClass); // TODO: delete this code
-
 	return (
 		<div ref={ref} className={appStyle['Card']}>
 			<div className={appStyle['Card__inner-section']}>

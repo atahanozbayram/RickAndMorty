@@ -1,0 +1,105 @@
+.Filter {
+	width: 50%;
+	margin: 0 auto;
+	padding-top: 10px;
+	margin-bottom: 50px;
+}
+/* BEGIN: input text group  */
+.Filter__form-group {
+	position: relative;
+	padding: 25px 0 0;
+	width: 50%;
+}
+
+.Filter__input-text-group {
+	display: flex;
+	flex: repeat(auto-fit, 1fr);
+	gap: 16px;
+}
+
+.Filter__text-input {
+	width: 100%;
+	border: 2px solid #9b9b9b;
+	border-radius: 5px;
+	outline: 0;
+	font-size: 1.3rem;
+	color: #ffffff;
+	padding: 7px 0;
+	background: transparent;
+	transition: border-color 0.3s;
+}
+
+.Filter__text-input::placeholder {
+	color: transparent;
+}
+.Filter__text-input:placeholder-shown ~ .Filter__form-label {
+	font-size: 1.3rem;
+	cursor: text;
+	top: 30px;
+	border-radius: 5px;
+}
+
+.Filter__form-label {
+	position: absolute;
+	top: 0px;
+	left: 10px;
+	display: block;
+	transition: 0.3s;
+	font-size: 1rem;
+	color: #9b9b9b;
+}
+
+.Filter__text-input:focus {
+	padding-bottom: 6px;
+	font-weight: 700;
+	border-image: linear-gradient(to right, #11998e, #38ef7d);
+	border-image-slice: 1;
+	border-radius: 5px;
+}
+
+.Filter__text-input:focus ~ .Filter__form-label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	transition: 0.3s;
+	font-size: 1rem;
+	color: #11998e;
+	font-weight: 700;
+}
+
+/* END: input text group */
+
+/* BEGIN: radio area */
+.Filter__radio-area {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding-top: 10px;
+}
+
+.Filter__radio-gender,
+.Filter__radio-status {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+/* END: radio area */
+
+/* BEGIN: Media queries for mobile */
+@media screen and (max-width: 448px) {
+	.Filter {
+		width: 100%;
+		margin: 0 auto;
+		padding-top: 10px;
+		margin-bottom: 50px;
+	}
+
+	.Filter__input-text-group {
+		flex-direction: column;
+	}
+
+	.Filter__form-group {
+		width: 90%;
+		margin: 0 5%;
+	}
+}
