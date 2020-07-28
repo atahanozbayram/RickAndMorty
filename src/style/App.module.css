@@ -1,3 +1,6 @@
+.App {
+}
+
 .heroSection {
 	background-image: url('../images/hero.png');
 	height: 0;
@@ -13,7 +16,7 @@
 	top: 0px;
 	height: 80px;
 	width: 100%;
-	background-color: #1d3557;
+	background-color: #6600cc;
 	color: #ffffff;
 	font: Regular 20px/27px Segoe UI;
 	display: flex;
@@ -27,6 +30,27 @@
 	font-size: 20px/27px;
 }
 
-.CardList_section {
-	background-color: #094f6f;
+.topbar > ul > li {
+	border: 2px solid #ff8000;
+	padding: 5px;
+	line-height: 100%;
+	border-radius: 5px;
+	padding-top: 10px;
 }
+
+.CardList_section {
+	/* e79d18
+#094f6f
+	 */
+	background-color: #6600cc;
+}
+
+/* BEGIN: Media queries */
+
+@media screen and (max-width: 728px) {
+	.topbar {
+		height: 40px;
+	}
+}
+
+/* END: Media queries */

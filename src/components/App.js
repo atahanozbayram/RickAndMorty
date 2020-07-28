@@ -16,7 +16,7 @@ function App(props) {
 	}); // pass down setFilteringOptions to Filter component for changing the filterings states.
 
 	return (
-		<div>
+		<div className={appStyle['App']}>
 			{/* Outer div of all */}
 			<div className={appStyle.heroSection}>
 				{/* Top bar and hero area. */}
@@ -28,7 +28,7 @@ function App(props) {
 			</div>
 			<div className={appStyle.CardList_section}>
 				{/* section for listing cards and filtering */}
-				<div>
+				<div className={appStyle['CardList__filter']}>
 					<Filter filterHandler={setFilteringOptions} filteringOptions={filteringOptions} />
 				</div>
 				<div>

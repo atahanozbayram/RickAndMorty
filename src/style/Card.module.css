@@ -7,6 +7,7 @@
 	border-bottom-left-radius: 0px;
 	padding: 16px;
 	overflow: hidden;
+	box-shadow: 10px 10px 5px;
 }
 
 /* Inner section of the Card */
@@ -106,6 +107,10 @@
 
 /* Media queries */
 @media screen and (max-width: 448px) {
+	.Card {
+		margin: 0 10px;
+	}
+
 	.Card__inner-section {
 		max-height: none;
 		display: grid;

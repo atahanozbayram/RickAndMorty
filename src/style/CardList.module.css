@@ -1,8 +1,9 @@
 .CardList {
+	min-height: 100vh;
 	display: grid;
 	gap: 24px;
 	grid-template-columns: repeat(auto-fit, minmax(448px, 1fr));
-	margin: 0 8px;
+	margin: 0 16px;
 }
 
 @media screen and (max-width: 448px) {

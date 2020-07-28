@@ -1,15 +1,17 @@
 .Filter {
-	width: 50%;
-	margin: 0 auto;
+	margin: 10px 10px;
 	padding-top: 10px;
 	margin-bottom: 50px;
 	color: #ffffff;
+	width: 70%;
+	margin: 0 auto;
+	margin-bottom: 40px;
 }
 /* BEGIN: input text group  */
 .Filter__form-group {
 	position: relative;
 	padding: 25px 0 0;
-	width: 50%;
+	width: 90%;
 }
 
 .Filter__input-text-group {
@@ -20,7 +22,7 @@
 
 .Filter__text-input {
 	width: 100%;
-	border: 2px solid #9b9b9b;
+	border: 2px solid #ff8000;
 	border-radius: 5px;
 	outline: 0;
 	font-size: 1.3rem;
@@ -48,13 +50,13 @@
 	display: block;
 	transition: 0.3s;
 	font-size: 1rem;
-	color: #9b9b9b;
+	color: #ffffff;
 }
 
 .Filter__text-input:focus {
 	padding-bottom: 6px;
 	font-weight: 700;
-	border-image: linear-gradient(to right, #11998e, #38ef7d);
+	border-image: linear-gradient(to right, #ffffff, #ffffff);
 	border-image-slice: 1;
 	border-radius: 5px;
 }
@@ -66,7 +68,7 @@
 	display: block;
 	transition: 0.3s;
 	font-size: 1rem;
-	color: #11998e;
+	color: #ffffff;
 	font-weight: 700;
 }
 
@@ -103,7 +105,7 @@
 	appearance: none;
 	height: 24px;
 	width: 24px;
-	border: 2px solid #747474;
+	border: 2px solid #ff8000;
 	border-radius: 50%;
 	display: flex;
 	justify-content: center;
@@ -112,14 +114,18 @@
 }
 
 .Filter__radio-div input:checked {
-	border-color: #008265;
+	border-color: #ffffff;
+}
+
+.Filter__radio-div input:focus {
+	border-color: #ffffff;
 }
 
 .Filter__radio-div input::after {
 	content: '';
 	width: 14px;
 	height: 14px;
-	background-color: #008265;
+	background-color: #ffffff;
 	display: block;
 	border-radius: 50%;
 	position: absolute;
@@ -130,6 +136,7 @@
 .Filter__radio-div input:checked::after {
 	content: '';
 	transform: scale(1);
+	background-color: #ffffff;
 }
 
 .Filter__radio-div label {
@@ -150,12 +157,32 @@
 		margin-bottom: 50px;
 	}
 
-	.Filter__input-text-group {
-		flex-direction: column;
-	}
-
 	.Filter__form-group {
-		width: 90%;
 		margin: 0 5%;
 	}
 }
+
+@media screen and (max-width: 1280px) {
+	.Filter__input-text-group {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.Filter {
+		width: unset;
+	}
+
+	.Filter__radio-area {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 24px;
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.Filter__radio-gender {
+		display: grid;
+	}
+}
+
+/* END: Media queries for mobile */

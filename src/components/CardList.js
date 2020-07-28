@@ -40,7 +40,7 @@ function CardList(props) {
 				{
 					root: null, // viewport
 					rootMargin: '0px',
-					threshold: 1.0, // All of the component should be intersecting
+					threshold: 0.0, // All of the component should be intersecting
 				}
 			);
 			if (cardComponent) observer.current.observe(cardComponent);
