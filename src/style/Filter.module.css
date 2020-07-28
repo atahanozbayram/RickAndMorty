@@ -28,6 +28,7 @@
 	padding: 7px 0;
 	background: transparent;
 	transition: border-color 0.3s;
+	padding-left: 7px;
 }
 
 .Filter__text-input::placeholder {
