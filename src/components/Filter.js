@@ -93,8 +93,8 @@ function Filter(props) {
 					<div>
 						<label>Gender:</label>
 					</div>
-					<div>
-						<div>
+					<div className={appStyle['Filter__radio-container']}>
+						<div className={appStyle['Filter__radio-div']}>
 							<input
 								type="radio"
 								value="male"
@@ -105,7 +105,7 @@ function Filter(props) {
 							/>
 							<label htmlFor={maleId}>Male</label>
 						</div>
-						<div>
+						<div className={appStyle['Filter__radio-div']}>
 							<input
 								type="radio"
 								value="female"
@@ -116,7 +116,7 @@ function Filter(props) {
 							/>
 							<label htmlFor={femaleId}>Female</label>
 						</div>
-						<div>
+						<div className={appStyle['Filter__radio-div']}>
 							<input
 								type="radio"
 								value="genderless"
@@ -127,7 +127,7 @@ function Filter(props) {
 							/>
 							<label htmlFor={genderlessId}>Genderless</label>
 						</div>
-						<div>
+						<div className={appStyle['Filter__radio-div']}>
 							<input
 								type="radio"
 								value="unknown"
@@ -145,8 +145,8 @@ function Filter(props) {
 					<div>
 						<label>Status:</label>
 					</div>
-					<div>
-						<div>
+					<div className={appStyle['Filter__radio-container']}>
+						<div className={appStyle['Filter__radio-div']}>
 							<input
 								type="radio"
 								value="alive"
@@ -157,7 +157,7 @@ function Filter(props) {
 							/>
 							<label htmlFor={aliveId}>Alive</label>
 						</div>
-						<div>
+						<div className={appStyle['Filter__radio-div']}>
 							<input
 								type="radio"
 								value="dead"
@@ -168,7 +168,7 @@ function Filter(props) {
 							/>
 							<label htmlFor={deadId}>Dead</label>
 						</div>
-						<div>
+						<div className={appStyle['Filter__radio-div']}>
 							<input
 								type="radio"
 								value="unknown"

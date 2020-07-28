@@ -3,6 +3,7 @@
 	margin: 0 auto;
 	padding-top: 10px;
 	margin-bottom: 50px;
+	color: #ffffff;
 }
 /* BEGIN: input text group  */
 .Filter__form-group {
@@ -81,6 +82,60 @@
 .Filter__radio-status {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	gap: 24px;
+}
+
+.Filter__radio-container {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.Filter__radio-div {
+	display: flex;
+	gap: 4px;
+}
+
+.Filter__radio-div input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	height: 24px;
+	width: 24px;
+	border: 2px solid #747474;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: border-color 0.4s ease;
+}
+
+.Filter__radio-div input:checked {
+	border-color: #008265;
+}
+
+.Filter__radio-div input::after {
+	content: '';
+	width: 14px;
+	height: 14px;
+	background-color: #008265;
+	display: block;
+	border-radius: 50%;
+	position: absolute;
+	transform: scale(0);
+	transition: transform 0.4s ease;
+}
+
+.Filter__radio-div input:checked::after {
+	content: '';
+	transform: scale(1);
+}
+
+.Filter__radio-div label {
+	display: inline-block;
+	line-height: 24px;
+	vertical-align: top;
+	margin-left: 10px;
 }
 
 /* END: radio area */
