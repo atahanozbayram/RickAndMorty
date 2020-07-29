@@ -15,7 +15,6 @@
 .Card__inner-section {
 	display: grid;
 	grid-template-columns: 208px 1fr;
-	grid-template-rows: 208px;
 	gap: 8px;
 
 	max-height: 208px;
