@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Filter from '../components/Filter';
 import CardList from '../components/CardList';
-import useQueryCharacter from '../hooks/useQueryCharacter';
-import heroImage from '../images/hero.png';
 import '../style/Reset.css';
 import appStyle from '../style/App.module.css';
 
