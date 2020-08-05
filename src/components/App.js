@@ -16,14 +16,12 @@ function App(props) {
 	return (
 		<div className={appStyle['App']}>
 			{/* Outer div of all */}
-			<div className={appStyle.heroSection}>
-				{/* Top bar and hero area. */}
-				<div className={appStyle.topbar}>
-					<ul>
-						<li>HOME</li>
-					</ul>
-				</div>
+			<div className={appStyle.topbar}>
+				<ul>
+					<li>HOME</li>
+				</ul>
 			</div>
+			<div className={appStyle.heroSection}>{/* Top bar and hero area. */}</div>
 			<div className={appStyle.CardList_section}>
 				{/* section for listing cards and filtering */}
 				<div className={appStyle['CardList__filter']}>
