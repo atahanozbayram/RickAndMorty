@@ -1,5 +1,9 @@
+// Dependencies:
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+// Stylings:
 import appStyle from '../style/Card.module.css';
 
 function Card(props, ref) {
@@ -12,9 +16,11 @@ function Card(props, ref) {
 	return (
 		<div ref={ref} className={appStyle['Card']}>
 			<div className={appStyle['Card__inner-section']}>
-				<div className={appStyle['Card__image-area']}>
-					<img src={ch.image} />
-				</div>
+				<Link to={`/character/${ch.id}`}>
+					<div className={appStyle['Card__image-area']}>
+						<img src={ch.image} />
+					</div>
+				</Link>
 				<div className={appStyle['Card__information-area']}>
 					<div className={statusClass}>
 						<div>{ch.species}</div>
