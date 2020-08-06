@@ -1,13 +1,37 @@
-import React from 'react';
+// Dependencies:
+import React, { useState, useEffect } from 'react';
+
+// Custom components:
+import useGetEpisode from '../hooks/useGetEpisode';
 
 function Details(props) {
 	const { character: ch } = props;
 
-	if (!ch) return null;
+	const { episodes, error, loading } = useGetEpisode(ch.episode);
 
 	return (
 		<div>
-			<img src={ch.image} />
+			<div>
+				<div>
+					<img src={ch.image} alt={ch.name} />
+					<div></div>
+				</div>
+				<div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div>
+				<h2>List of episodes</h2>
+				<div>
+					{episodes.map((ep) => {
+						return <div key={ep.id}>{ep.name}</div>;
+					})}
+				</div>
+			</div>
 		</div>
 	);
 }

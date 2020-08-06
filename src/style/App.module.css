@@ -27,13 +27,18 @@
 	align-items: center;
 }
 
-.topbar > ul {
+.topbar ul {
 	position: absolute;
 	padding: 40px;
 	font-size: 20px/27px;
 }
 
-.topbar > ul > li {
+.topbar ul a {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.topbar ul li {
 	border: 2px solid #ff8000;
 	padding: 5px;
 	line-height: 100%;

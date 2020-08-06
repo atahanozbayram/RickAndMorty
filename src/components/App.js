@@ -26,7 +26,9 @@ function App(props) {
 				{/* Outer div of all */}
 				<div className={appStyle.topbar}>
 					<ul>
-						<li>HOME</li>
+						<Link to="/">
+							<li>HOME</li>
+						</Link>
 					</ul>
 				</div>
 				<Switch>

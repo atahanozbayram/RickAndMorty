@@ -6,6 +6,9 @@ import { useParams, Redirect } from 'react-router-dom';
 import useGetCharacter from '../hooks/useGetCharacter';
 import Details from '../components/Details';
 
+// Stylings:
+import appStyle from '../style/DetailsPage.module.css';
+
 function DetailsPage() {
 	const { id } = useParams();
 
@@ -14,11 +17,10 @@ function DetailsPage() {
 	const redirect = error ? <Redirect to="/error" /> : null;
 
 	return (
-		<React.Fragment>
+		<div className={appStyle['DetailsPage']}>
 			{redirect}
-			<div>{loading && 'Loading...'}</div>
-			<Details character={character} />
-		</React.Fragment>
+			{loading ? 'Loading...' : <Details character={character} />}
+		</div>
 	);
 }
 
