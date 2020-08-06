@@ -20,6 +20,17 @@ function App(props) {
 		gender: '',
 	}); // pass down setFilteringOptions to Filter component for changing the filterings states.
 
+	function scrollToTop() {
+		window.scroll({
+			top: 0,
+			left: 0,
+			behavior: 'smooth',
+		});
+
+		const html = document.getElementsByTagName('html')[0];
+		html.style.scrollBehavior = 'auto';
+	}
+
 	return (
 		<Router>
 			<div className={appStyle['App']}>
@@ -32,10 +43,16 @@ function App(props) {
 					</ul>
 				</div>
 				<Switch>
+					<Route path="/error">
+						<h1>ERROR...</h1>
+					</Route>
 					<Route path="/character/:id">
 						<DetailsPage />
 					</Route>
 					<Route path="/">
+						<div className={appStyle['App__get-to-top-icon']} onClick={scrollToTop}>
+							UP
+						</div>
 						<div className={appStyle.heroSection}>{/* Top bar and hero area. */}</div>
 						<div className={appStyle.CardList_section}>
 							{/* section for listing cards and filtering */}
