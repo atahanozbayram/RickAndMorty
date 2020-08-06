@@ -1,0 +1,123 @@
+.Details {
+	max-width: 65%;
+	color: #fff;
+	display: flex;
+	gap: 24px;
+	margin: 0 auto;
+}
+
+.Details__character-section {
+	width: 400px;
+	height: 100%;
+}
+
+.Details__image-section {
+	width: inherit;
+	position: relative;
+	display: inline-block;
+}
+
+.Details__image-section div {
+	width: 100%;
+	height: 3em;
+	line-height: 3em;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Details__image-section img {
+	width: inherit;
+}
+
+.Details__information-section {
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.Details__information-section > div {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 2px solid white;
+}
+
+.Details__episodes-section {
+	background: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	white-space: nowrap;
+}
+
+.Details__episode-line-container {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.Details__episode-line {
+	display: flex;
+	justify-content: space-between;
+	font-weight: 900;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.Details__episode-line-name {
+}
+
+.Details__episode-line-episode {
+	font-style: italic;
+	font-weight: bold;
+	color: #a9a9a9;
+}
+
+.Details__episode-air-date {
+	font-weight: 100;
+	font-size: 0.9em;
+}
+
+/* BEGIN: Media queries */
+@media screen and (max-width: 1280px) {
+	.Details {
+		font-size: 12px;
+		flex-direction: column;
+		align-items: center;
+		max-width: unset;
+		margin: 0 8px;
+	}
+
+	.Details__character-section {
+		width: 100%;
+	}
+
+	.Details__episodes-section {
+		white-space: normal;
+	}
+
+	@supports not (gap: 24px) {
+		.Details > div {
+			margin-top: 24px;
+		}
+
+		.Details__information-section > div {
+			margin-top: 16px;
+		}
+
+		.Details__episodes-section > div {
+			margin-top: 16px;
+		}
+
+		.Details__episode-line-container > div {
+			margin-top: 16px;
+		}
+	}
+}
+
+/* END: Media queries */

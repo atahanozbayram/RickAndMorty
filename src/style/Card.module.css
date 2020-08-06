@@ -114,7 +114,7 @@
 		max-height: none;
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: 208px 1fr;
+		grid-template-rows: 1fr 1fr;
 	}
 
 	.Card__inner-section > div {
@@ -123,6 +123,15 @@
 
 	.Card__inner-section {
 		gap: 0;
+	}
+
+	.Card__image-area {
+		height: 100%;
+	}
+
+	.Card__image-area img {
+		width: 100%;
+		height: 100%;
 	}
 
 	.Card__information-area > div {

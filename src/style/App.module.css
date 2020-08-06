@@ -1,7 +1,10 @@
 .App {
+	position: relative;
 }
-
 .heroSection {
+	position: absolute;
+	top: 0;
+	left: 0;
 	background-image: url('../images/hero.png');
 	height: 0;
 	background-repeat: no-repeat;
@@ -11,7 +14,8 @@
 }
 
 .topbar {
-	position: absolute;
+	padding: 8px;
+	z-index: 5;
 	left: 0px;
 	top: 0px;
 	height: 80px;
@@ -24,13 +28,17 @@
 	align-items: center;
 }
 
-.topbar > ul {
-	position: absolute;
-	padding: 40px;
+.topbar ul {
+	display: inline-block;
 	font-size: 20px/27px;
 }
 
-.topbar > ul > li {
+.topbar ul a {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.topbar ul li {
 	border: 2px solid #ff8000;
 	padding: 5px;
 	line-height: 100%;
@@ -49,7 +57,7 @@
 
 @media screen and (max-width: 728px) {
 	.topbar {
-		height: 40px;
+		height: 60px;
 	}
 }
 
