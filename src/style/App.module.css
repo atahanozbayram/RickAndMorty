@@ -2,6 +2,9 @@
 	position: relative;
 }
 .heroSection {
+	position: absolute;
+	top: 0;
+	left: 0;
 	background-image: url('../images/hero.png');
 	height: 0;
 	background-repeat: no-repeat;
@@ -11,7 +14,6 @@
 }
 
 .topbar {
-	position: absolute;
 	z-index: 5;
 	left: 0px;
 	top: 0px;

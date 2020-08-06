@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function useGetCharacter(id) {
@@ -14,7 +14,7 @@ function useGetCharacter(id) {
 		axios({
 			method: 'GET',
 			baseURL: 'https://rickandmortyapi.com/api',
-			url: '/character',
+			url: `/character/${id}`,
 			cancelToken: new axios.CancelToken((cancelTok) => {
 				cancel = cancelTok;
 			}),

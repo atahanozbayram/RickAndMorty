@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 // Custom components:
 import Filter from '../components/Filter';
 import CardList from '../components/CardList';
+import DetailsPage from '../components/DetailsPage';
 
 // Stylings:
 import '../style/Reset.css';
@@ -29,6 +30,9 @@ function App(props) {
 					</ul>
 				</div>
 				<Switch>
+					<Route path="/character/:id">
+						<DetailsPage />
+					</Route>
 					<Route path="/">
 						<div className={appStyle.heroSection}>{/* Top bar and hero area. */}</div>
 						<div className={appStyle.CardList_section}>
