@@ -20,7 +20,19 @@ function useGetEpisode(epArray) {
 				.then((res) => {
 					arr.push(res.data);
 					// if the index is the last element, then finish loading
-					if (index === epArray.length - 1) setLoading(false);
+					if (index === epArray.length - 1) {
+						setLoading(false);
+						// sort the arr
+						arr.sort((b, a) => {
+							if (a.id > b.id) return 1;
+							if (a.id < b.id) return -1;
+							return 0;
+						});
+
+						// take the last 5 episodes
+						// set the episodes
+						setEpisodes(arr.slice(0, 5));
+					}
 				})
 				.catch((error) => {
 					// stop interpreting axios cancels as errors.
@@ -31,8 +43,6 @@ function useGetEpisode(epArray) {
 					setLoading(false);
 				});
 		});
-
-		setEpisodes(arr);
 
 		return cancel;
 	}, [epArray]);
